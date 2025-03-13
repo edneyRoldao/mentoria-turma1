@@ -17,6 +17,5 @@
     "breadcrumbs.enabled": true,
     "workbench.tree.indent": 15,    
     "terminal.integrated.fontSize": 27,
-    "terminal.integrated.fontFamily": "JetBrains Mono",
     "terminal.integrated.mouseWheelZoom": true,
 }
