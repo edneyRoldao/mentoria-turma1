@@ -1,3 +1,4 @@
+
 function validaCPF(cpf) {
     var Soma = 0
     var Resto
