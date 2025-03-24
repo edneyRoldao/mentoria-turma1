@@ -1,14 +1,15 @@
 /* MEDOTOS RECURSIVOS (auto invocaveis) */
 
-function meuFor(list, index) {
-    if (index < list.length) {
-        console.log(list[index]);
-        meuFor(list, ++index) // invocando a si mesmo
+function countDown(n) {
+    if (n <= 0) { // stop condition
+        return
     }
+
+    console.log(n); // print
     
-    return
-}
+    n = n - 1 // increment
 
-const names = ['maria', 'joao', 'jose']
+    countDown(n) // auto invocation
+} 
 
-meuFor(names, 0)
+countDown(5) // starting
