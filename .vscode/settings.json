@@ -16,6 +16,6 @@
     "workbench.statusBar.visible": false,
     "breadcrumbs.enabled": true,
     "workbench.tree.indent": 15,    
-    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.fontSize": 36,
     "terminal.integrated.mouseWheelZoom": true,
 }
