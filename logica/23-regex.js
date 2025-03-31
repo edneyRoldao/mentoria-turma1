@@ -1,9 +1,13 @@
 /* Expressoes Regulares 
-    - utilizado para validar se uma string segue um padrão
+    - utilizado para validar um campo
+    - verificar um padrao
+    - extrair dados em massa
+    - para susbstituicao
 */
 
-const email = "edney@mail.com"
-const email2 = "rafa@gmail.com.uk"
-const email3 = "otavio@hotmail.com"
-const email4 = "wesleyGiovanna#test.com"
+// OBS: Substituindo um telefone
 
+// validando telefone - passo 10
+let regex = /\(\d{2}\) \d{4,5}-?\d{4}/g
+let textoComTelefones = 'sdfasfda (99) 91234-3333 sdfasdfasdfasd sdfasfda (99) 91234-9999  sdfasfda (99) 91234-8888 sdfasfda (99) 91234-7777  dsadaSDAsd'
+console.log(textoComTelefones.replace(regex, '(proibido)'));
