@@ -2,7 +2,7 @@ Lista 1
 -----------------------------------------------------------------------------
 01 - O etanol tem cerca de 70% do rendimento da gasolina. Recebe o valor da gasolina
      e do alcool. Informe qual deles compensa mais.
-02 - recebe uma temperatura em celsius e converta para Fahrenheit. c = 5*(f-32)/9
+02 - recebe uma temperatura em celsius e converta para Fahrenheit. F = (C*9/5)+32
 03 - rebeca um numero e mostre a sequencia fibonacci
 04 - Faça a ordenação de uma lista de numeros
 05 - Faça a ordenação de uma lista de nomes
