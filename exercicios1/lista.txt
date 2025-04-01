@@ -1,0 +1,13 @@
+Lista 1
+-----------------------------------------------------------------------------
+01 - O etanol tem cerca de 70% do rendimento da gasolina. Recebe o valor da gasolina
+     e do alcool. Informe qual deles compensa mais.
+02 - recebe uma temperatura em celsius e converta para Fahrenheit. c = 5*(f-32)/9
+03 - rebeca um numero e mostre a sequencia fibonacci
+04 - Faça a ordenação de uma lista de numeros
+05 - Faça a ordenação de uma lista de nomes
+06 - Receba o nome completo de uma pessoa e coloque a primeira letra em maiusculo
+07 - receba um texto e mostre se é um email usando regex
+08 - receba um texto e verifique se é um palindromo
+09 - numero perfeito: a soma dos seus divisores próprios, é igual a ele mesmo
+10 - Anagrama: recebe duas palavras e verifique se elas são anagrama

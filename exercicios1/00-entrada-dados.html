@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <div>
+            <input type="text" id="input1">
+            <br><br>
+            <input type="text" id="input2">
+            <br><br>
+            <button onclick="executarScript()">EXECUTAR</button>            
+        </div>
+        <p id="resultado"> Resultado:</p>
+    </body>
+
+    <script>
+        function executarScript() {
+            let input1 = document.getElementById('input1').value
+            let input2 = document.getElementById('input2').value
+            let resultadoElement = document.getElementById('resultado')
+
+            // codigo vem aqui
+            let valor1 = parseInt(input1)
+            let valor2 = parseInt(input2)
+            let r = valor1 + valor2
+            
+            // exibicao aqui
+            resultadoElement.innerHTML = r
+        }
+    </script>
+</html>
