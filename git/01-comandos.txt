@@ -1,0 +1,19 @@
+-> git init |   (init um repositorio, significa que as mudancas do diretoria serão controladas)
+
+-> git status |     (verifica os arquivos alterados para comitar)
+
+-> git add nome-do-arquivo |    (coloca o arquivo pra dentro da staging area)
+
+-> git commit -m "mensagem para o commit" | (salva as mudancas, comita o codigo)
+
+-> git log | (lista todos os commits)
+
+-> git log --oneline | (lista todos os commits em uma linha)
+
+-> git branch nome-da-branch |  (para criar uma branch, ramificacao)
+
+-> git branch | (lista os branch do repositório)
+
+-> git merge nome-da-branch | (para Juntar o codigo de duas branches)
+
+-> git diff nome-do-arquivo | (exibe as mudancas que ocorreram no arquivo)

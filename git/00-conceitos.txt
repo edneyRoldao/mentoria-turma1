@@ -1,0 +1,20 @@
+Para quê serve o git?
+- tabalho em equipe (sincronizacao dos codigos, merge)
+- controle de versão de codigo (versionamento) (snapshot)
+-------------------------------------------------------------------------
+
+
+O que é um commit ?
+ - é salvar no git os arquivos que foram alterados
+ - é uma foto que vc tira da pasta
+-------------------------------------------------------------------------
+
+
+Untracked Area e Staging area:
+
+Untracked Area: os arquivo aqui não serão comitados (salvos)
+Staging area: São os arquivos elegíveis para serem salvos (serão comitados)
+-------------------------------------------------------------------------
+
+Merge:
+ - Juntar o codigo de duas branches
