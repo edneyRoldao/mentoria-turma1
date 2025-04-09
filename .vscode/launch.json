@@ -6,7 +6,7 @@
         "request": "launch",
         "name": "Iniciar com Node.js",
         "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}/exercicios1/01-combustivel.js"
+        "program": "${workspaceFolder}/exercicios1/08-palindromo-rafa.js"
       }
     ]
   }
