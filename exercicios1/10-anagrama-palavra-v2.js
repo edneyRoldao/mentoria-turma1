@@ -11,7 +11,6 @@ function isAnagrama(p1, p2) {
 }
 
 function ordenarPalavra(p = '') {
-
     // colocando as letras da palavra em um array real
     let pLista = []    
     for(let i = 0; i < p.length; i++) {

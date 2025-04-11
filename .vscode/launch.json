@@ -6,7 +6,7 @@
         "request": "launch",
         "name": "Iniciar com Node.js",
         "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}/exercicios1/10-anagrama-palavra.js"
+        "program": "${workspaceFolder}/exercicios1/09-numero-perfeito-otavio.js"
       }
     ]
   }
