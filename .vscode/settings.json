@@ -16,6 +16,10 @@
     "workbench.statusBar.visible": false,
     "breadcrumbs.enabled": true,
     "workbench.tree.indent": 15,    
+<<<<<<< Updated upstream
     "terminal.integrated.fontSize": 24,
+=======
+    "terminal.integrated.fontSize": 18,
+>>>>>>> Stashed changes
     "terminal.integrated.mouseWheelZoom": true,
 }

@@ -30,4 +30,4 @@
 
 -> git stash (salva os arquivos alterados em uma area de rascunho para serem usados depois)
 
-->
+-> git stash apply (retorno o codigo que estava na lista de rascunhos)
