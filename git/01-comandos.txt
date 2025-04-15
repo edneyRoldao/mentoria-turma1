@@ -17,3 +17,13 @@
 -> git merge nome-da-branch | (para Juntar o codigo de duas branches)
 
 -> git diff nome-do-arquivo | (exibe as mudancas que ocorreram no arquivo)
+
+-> git add . (o ponto coloca todos na staging area)
+
+-> git checkout nome-da-branch (troca de branch)
+
+-> git checkout -b nome-da-nova-branch (cria a branch e faz o checkout)
+
+-> git push (mando os commits locais para o remoto)
+
+-> git pull (puxa os commits do remoto para o local)
