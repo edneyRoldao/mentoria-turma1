@@ -6,3 +6,7 @@ let valorG = process.argv[2]
 let valorA = process.argv[3]
 console.log(valorG);
 console.log(valorA);
+
+
+let list = []
+list.map(item => item)

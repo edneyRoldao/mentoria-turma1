@@ -1,0 +1,111 @@
+Java basico
+-----------
+
+- podemos ter mais de uma classe em um arquivo
+- apenas uma classe publica por arquivo
+- o nome do arquivo deve ser agual ao da classe publica
+- todo classe deve iniciar com letra maiuscula
+- nome de classes e variaveis devem sempre que possível, ser no singular
+- todo programa java deve conter um metodo de inicializacao que é o metodo main
+- erros de tempo de compilacao e erros em tempo de execucao
+- não perdoa erros
+- Linguagem fortemente tipada
+- cada enum deve ser considerado como uma variavel estática
+- classe: como se fosse a fôrma pra fazer um bolo
+    - caracteristicas (nome cliente, saldo, documento, dataNascimento)
+    - comportamento (sacar, depositar, transferir, encerrar)
+- objetos: como se fosse o bolo que sai da fôrma
+- membros: são as variáveis acessíveis via objeto
+- encapsulamento: deve proteger as variaveis membros utilizando getters e setters
+    - get -> para obter o valor da variavel
+    - set -> definir o valor da variavel
+
+Padroes (convencao)
+- classes: Maiusculo, cammelCase
+- variaveis: minusculo, cammelCase
+
+
+Compilacao
+----------
+-> javac NomeDaClasse.java
+
+Executar
+--------
+-> java NomeDaClasse
+
+Pacotes e importacao
+- a declaracao do pacote deve ser a primeira instrucao da classe
+- quando as classes não estiverem no mesmo pacote, precisamos
+- os imports vem logo apos a declaracao do pacote
+
+Modificadores de acesso (variaveis, metodos e classes)
+    - public (pode ser acessado de qualquer lugar)
+    - protected (só pode ser acessado pelos filhos)
+    - package default (só são acessíveis por classe dentro de mesmo pacote)
+    - private (só pode ser acessado dentro da propria classe)
+    - static (pertence à classe)
+    
+    - final 
+        - variaveis: não podem ser alteradas
+        - metodos: não podem ser sobrescritos
+        - classe : não pode ser extendida
+
+Construtores
+------------
+Usados para montar o objeto (construir)
+    - podemos definir quais serão as regras para montar nosso objeto
+    - quando nao definimos um construtor, temos vazio por padrao
+
+this
+----
+Usado para acessar as variaveis e metodos membros da classe. Com isso, podemos
+diferenciar variaveis locais com mesmo nome
+
+modicador abstract
+- uma classe só pode extender apenas uma classe
+- em classes:  
+    - a classe não pode ser instanciada (new ...)
+- em metodos: 
+    - são metodos sem corpo que todos os filhos devem implementar
+    - os filhos são obrigados a implementar
+    - so podemos ter metodo abstract em classes abstract
+
+Sobrescrita de metodos (Override)
+    - É quando a subClasse altera o comportamento do metodo que está no pai
+
+Sobrecarga de metodos:
+    - é quando temos mais de um metodo com o mesmo nome, onde eles são diferenciados
+      pelo quantidade ou tipos dos parametros
+
+
+Interface:
+    - é uma classe abstract, pq ele só tem metodos abstract
+    - todo metodo em uma interface é public
+    - só tem variaveis membro que sao public static final
+    - uma classe pode implementar mais de uma interface
+    - nao pode ser instanciado (new...)
+
+Polimorfismo:
+    - clichê -> é uma classe que assume varias formas
+    - é quando usandos a interface ou class pai como referencia na construcao
+      de sistemas com POO
+
+Composicao:
+    - em linhas gerais, é quando utilizamos interfaces como variaveis membros de classe.
+      Nesse caso, devemos criar um construtor para que a classe concreta seja informada
+      na execucao do programa.
+
+Classe Object:
+    - pai de todas as classes
+    - é implicito
+
+Perguntas
+---------
+Por que usar enum?
+Para limitar o valor de um texto, evitando assim valores inconsistentes
+
+- Falar sobre garbage collector
+- Falar sobre usar o filho no lugar do pai (heranca)
+
+
+- termo on the fly:
