@@ -6,7 +6,7 @@ import sistemabancario.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
 
-// filtrando a lista
+// reduce -> serve para somar os valores de uma lista
 public class ExemploReduce {
 
     public static void main(String[] args) {
@@ -16,10 +16,11 @@ public class ExemploReduce {
         contas.add(new Conta(2, 500, new Pessoa(20, "Joao", "5678")));
         contas.add(new Conta(3, 10000, new Pessoa(30, "Maria", "4564")));
 
-        double total = 
+        double total = contas
+                .stream()
+                .map(Conta::getSaldo)
+                .reduce(10.0, (subtotal, proximo) -> subtotal + proximo);
 
-        System.out.println();
-
+        System.out.println(total);
     }
-
 }

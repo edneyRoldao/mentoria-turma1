@@ -19,7 +19,9 @@ public class ExemploFilter {
         List<Pessoa> pessoasFiltrada = contas
                 .stream()
                 .filter(conta -> conta.getSaldo() >= 1000)
-                .map(conta -> conta.getPessoa())
+                .map(conta -> {
+                    return conta.getPessoa();
+                })
                 .toList();
 
         System.out.println(pessoasFiltrada);

@@ -1,5 +1,6 @@
 package calculoimposto;
 
+@SuppressWarnings("all")
 public class ProdutoService {
 
     // POLIMORFISMO
