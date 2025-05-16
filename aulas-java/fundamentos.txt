@@ -77,13 +77,13 @@ Sobrecarga de metodos:
     - é quando temos mais de um metodo com o mesmo nome, onde eles são diferenciados
       pelo quantidade ou tipos dos parametros
 
-
 Interface:
     - é uma classe abstract, pq ele só tem metodos abstract
     - todo metodo em uma interface é public
     - só tem variaveis membro que sao public static final
     - uma classe pode implementar mais de uma interface
     - nao pode ser instanciado (new...)
+    - podem ter medotos concretos, desde que sejam com o modificador default
 
 Polimorfismo:
     - clichê -> é uma classe que assume varias formas
@@ -98,6 +98,36 @@ Composicao:
 Classe Object:
     - pai de todas as classes
     - é implicito
+
+expressão Lambda:
+    - é uma forma de implementar uma interface em tempo de execucao.
+      Para isso, nós precisamos que a interface seja uma FunctionalInterface
+    - ela aloca uma thread exclusivo para a execucao da mesmo
+    - as variaveis devem ser efetivamento final.
+
+FunctionalInterface: 
+    - Sao interfaces que possuem apenas um metodo abstract
+    - ele pode ter metodos default
+
+Generics:
+    é uma de definir o tipo de um objeto dentro de uma classe na hora de instanciar o objeto.
+    com isso, evitamos erros de ClassCastException.
+    Exemplo: Optional, List.
+    Funciona com um Coringa *
+
+Collections:
+    Map: mapa de chave e valor -> Map<T, K>
+    SetList: Armazena valores únicos
+    LinkedList: Cada elemento quando a referencia de quem está na sua frente
+
+Exceptions:
+    - Um erro não tratado o programa é interrompido
+    - block try catch: usamos para tratar possiveis erros
+        - tudo que está no try apos linha do erro, não será executado
+    - checked Exception precisam ser tratadas obrigatoriamente
+
+Meta programa:
+    - reflections (introspecsão)
 
 Perguntas
 ---------
