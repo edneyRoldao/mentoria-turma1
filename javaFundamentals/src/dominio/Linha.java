@@ -12,7 +12,7 @@ public class Linha {
     private Double saldo;
     private Integer numeroContaDestino;
     private Double valor;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private LocalDateTime dataCriacao;
 
     public String getCodigoOperacao() {
@@ -71,11 +71,11 @@ public class Linha {
         this.valor = valor;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
