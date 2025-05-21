@@ -41,7 +41,7 @@ public class ArquivoService {
         return null;
     }
 
-    public List<Linha> getLinhaPorNumeroConta(Integer numero) {
+    public List<Linha> getLinhasPorNumeroConta(Integer numero) {
         return null;
     }
 
