@@ -1,6 +1,7 @@
 package arquivo;
 
 import dominio.Linha;
+import dominio.Operacao;
 
 import java.util.List;
 
@@ -9,35 +10,47 @@ public class CaixaService {
     private final ArquivoService arquivoService = new ArquivoService();
 
     public void saquar(Integer numeroConta, Double valor) {
-        List<Linha> conta = arquivoService.getLinhasPorNumeroConta(numeroConta);
-        if (conta.isEmpty()) throw new IllegalArgumentException("conta nao existe");
+        List<Linha> eventosConta = arquivoService.getLinhasPorNumeroConta(numeroConta);
+        if (eventosConta.isEmpty()) throw new IllegalArgumentException("conta nao existe");
 
+        var saldo = calcularSaldo(eventosConta);
 
+        if (valor > saldo) throw new RuntimeException("saldo insulficiente");
+
+        var eventoSaque = Linha.createLinhaSaque(numeroConta, valor);
+        arquivoService.adicionarOperacaoArquivo(eventoSaque, Operacao.SAQUE);
     }
 
     public double calcularSaldo(List<Linha> eventos) {
-        Linha eventoCadastro = eventos
+        var eventoCadastro = eventos
                 .stream()
-                .filter(linha -> isLinhaOperacaoCadastro(linha))
+                .filter(linha -> linha.getCodigoOperacao().equals("CADASTRO"))
                 .findAny()
-                .get();
+                .orElse(new Linha());
 
-        /*\
-            achar o saldo
-            1 - achar saldo inicial
-            2 - achar todos os depositos
-            3 - somar saldo inicial + todos os depositos
-            4 - achar saques
-            5 - achar transferencias
-            6 - somar saques + transferencias
-            7 - saldo = (passo 3 - passo 7)
-        */
+        var eventosDeposito = eventos
+                .stream()
+                .filter(linha -> linha.getCodigoOperacao().equals("DEPOSITO"))
+                .toList();
 
-        return 0.0;
-    }
+        var eventosSaque = eventos
+                .stream()
+                .filter(linha -> linha.getCodigoOperacao().equals("SAQUE"))
+                .toList();
 
-    private boolean isLinhaOperacaoCadastro(Linha linha) {
-        return linha.getCodigoOperacao().equals("CADASTRO");
+        var saldoInicial = eventoCadastro.getSaldo();
+
+        var totalDepositos = eventosDeposito
+                .stream()
+                .map(Linha::getValor)
+                .reduce(0.0, Double::sum);
+
+        var totalSaques = eventosSaque
+                .stream()
+                .map(Linha::getValor)
+                .reduce(0.0, Double::sum);
+
+        return (saldoInicial + totalDepositos) - totalSaques;
     }
 
 }
