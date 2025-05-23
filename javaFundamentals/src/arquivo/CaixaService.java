@@ -11,14 +11,17 @@ public class CaixaService {
 
     public void saquar(Integer numeroConta, Double valor) {
         List<Linha> eventosConta = arquivoService.getLinhasPorNumeroConta(numeroConta);
-        if (eventosConta.isEmpty()) throw new IllegalArgumentException("conta nao existe");
-
-        var saldo = calcularSaldo(eventosConta);
-
-        if (valor > saldo) throw new RuntimeException("saldo insulficiente");
-
+        checarSeContaNaoExiste(eventosConta);
+        checarSaldoInsulficiente(eventosConta,valor);
         var eventoSaque = Linha.createLinhaSaque(numeroConta, valor);
         arquivoService.adicionarOperacaoArquivo(eventoSaque, Operacao.SAQUE);
+    }
+
+    public void deposito(Integer numeroConta, Double valor) {
+        List<Linha> eventosConta = arquivoService.getLinhasPorNumeroConta(numeroConta);
+        checarSeContaNaoExiste(eventosConta);
+        var eventoDeposito = Linha.createLinhaDeposito(numeroConta, valor);
+        arquivoService.adicionarOperacaoArquivo(eventoDeposito, Operacao.DEPOSITO);
     }
 
     public double calcularSaldo(List<Linha> eventos) {
@@ -51,6 +54,15 @@ public class CaixaService {
                 .reduce(0.0, Double::sum);
 
         return (saldoInicial + totalDepositos) - totalSaques;
+    }
+
+    private void checarSeContaNaoExiste(List<Linha> eventosConta) {
+        if (eventosConta.isEmpty()) throw new IllegalArgumentException("conta nao existe");
+    }
+
+    private void checarSaldoInsulficiente(List<Linha> eventosConta, Double valor) {
+        var saldo = calcularSaldo(eventosConta);
+        if (valor > saldo) throw new RuntimeException("saldo insulficiente");
     }
 
 }

@@ -23,6 +23,15 @@ public class Linha {
         return linha;
     }
 
+    public static Linha createLinhaDeposito(Integer numeroConta, double valor) {
+        var linha = new Linha();
+        linha.numeroConta = numeroConta;
+        linha.valor = valor;
+        linha.dataCriacao = LocalDateTime.now();
+        linha.codigoOperacao = Operacao.DEPOSITO.name();
+        return linha;
+    }
+
     public String getCodigoOperacao() {
         return codigoOperacao;
     }
