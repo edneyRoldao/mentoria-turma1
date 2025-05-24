@@ -1,5 +1,6 @@
 import arquivo.CaixaService;
 import arquivo.ContaService;
+import arquivo.impl.ContaServiceImpl;
 
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ public class Programa {
 
     static Scanner sc = new Scanner(System.in);
     static CaixaService caixaService = new CaixaService();
+    static ContaService contaService = new ContaServiceImpl();
 
     public static void main(String[] args) {
         while (true) {
