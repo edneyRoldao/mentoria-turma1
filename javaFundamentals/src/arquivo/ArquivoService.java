@@ -11,7 +11,7 @@ import static utils.DataUtil.getDataFormatada;
 
 public class ArquivoService {
 
-    public static final String CAMINHO_ARQUIVO = "/home/edney/Downloads/eventos_bancarios.txt";
+    public static final String CAMINHO_ARQUIVO = "/home/edney/workspace/eventos_bancarios.txt";
 
     public void adicionarOperacaoArquivo(Linha linha, Operacao operacao) {
         StringBuilder linhaStr = new StringBuilder(operacao.name()).append(",");

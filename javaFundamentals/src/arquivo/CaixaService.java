@@ -15,13 +15,34 @@ public class CaixaService {
         checarSaldoInsulficiente(eventosConta,valor);
         var eventoSaque = Linha.createLinhaSaque(numeroConta, valor);
         arquivoService.adicionarOperacaoArquivo(eventoSaque, Operacao.SAQUE);
+
+        System.out.println("Saque da conta: " + numeroConta + " realizado com sucesso");
     }
 
-    public void deposito(Integer numeroConta, Double valor) {
+    public void transferir(Integer contaOrigem, Integer contaDestino, final Double valor) {
+        try {
+            saquar(contaOrigem, valor);
+        } catch (Exception e) {
+            throw new RuntimeException("erro na transferencia - operacao saque conta origem: " + e.getMessage());
+        }
+
+        try {
+            depositar(contaDestino, valor);
+        } catch (Exception e) {
+            depositar(contaOrigem, valor);
+            throw new RuntimeException("erro na transferencia - operacao deposito conta destino: " + e.getMessage());
+        }
+
+        var eventoTransferencia = Linha.createLinhaTransferencia(contaOrigem, contaDestino, valor);
+        arquivoService.adicionarOperacaoArquivo(eventoTransferencia, Operacao.TRANSFERENCIA);
+    }
+
+    public void depositar(Integer numeroConta, Double valor) {
         List<Linha> eventosConta = arquivoService.getLinhasPorNumeroConta(numeroConta);
         checarSeContaNaoExiste(eventosConta);
         var eventoDeposito = Linha.createLinhaDeposito(numeroConta, valor);
         arquivoService.adicionarOperacaoArquivo(eventoDeposito, Operacao.DEPOSITO);
+        System.out.println("deposito na conta: " + numeroConta + " realizado com sucesso");
     }
 
     public double calcularSaldo(List<Linha> eventos) {

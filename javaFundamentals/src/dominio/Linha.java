@@ -32,6 +32,16 @@ public class Linha {
         return linha;
     }
 
+    public static Linha createLinhaTransferencia(Integer contaOrigem, Integer contaDestino, double valor) {
+        var linha = new Linha();
+        linha.numeroConta = contaOrigem;
+        linha.valor = valor;
+        linha.dataCriacao = LocalDateTime.now();
+        linha.numeroContaDestino = contaDestino;
+        linha.codigoOperacao = Operacao.TRANSFERENCIA.name();
+        return linha;
+    }
+
     public String getCodigoOperacao() {
         return codigoOperacao;
     }
