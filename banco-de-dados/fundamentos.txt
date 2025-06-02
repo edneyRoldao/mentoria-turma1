@@ -1,0 +1,39 @@
+Banco de dados - SQL
+--------------------
+
+- organiza os dados em formas de tabelas que se relacionam entre si.
+
+
+- DML: Data Modeling Language
+- SQL: Structured query Language
+
+
+
+- DDL: Data Definition Language	
+	- tabelas:
+		- campos,
+		- relacionamentos
+		- regras (constraint)
+		- chave primária (primary key, PK)
+	
+
+Banco de dados
+- criacao de banco
+- criacao de tabela
+- primary key (unica, nao pode repetir)
+- auto incremento (quando o banco gera um id automaticamente)
+- Cardinalidade
+- tabela associativa
+- 
+
+- normalizacao de tabelas
+    - para evitar repeticao de dados
+    - para reduzir quantidade de colunas (produto_1, _2, ...)
+
+
+Constraint
+- primary key (PK)
+- NOT NULL
+- UNIQUE
+- DEFAULT
+- Foreign Key (FK)
