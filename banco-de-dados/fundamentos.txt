@@ -8,7 +8,6 @@ Banco de dados - SQL
 - SQL: Structured query Language
 
 
-
 - DDL: Data Definition Language	
 	- tabelas:
 		- campos,
@@ -37,3 +36,27 @@ Constraint
 - UNIQUE
 - DEFAULT
 - Foreign Key (FK)
+
+Clausulas WHERE comparacao
+	-> = 
+	-> <> (diferente ou not equal)
+	-> >
+	-> <
+	-> >=
+	-> <=
+Clausulas WHERE logico
+	-> AND
+	-> OR
+	-> NOT
+
+Clausulas WHERE outros:
+	-> BETWEEN
+	-> IN 
+	-> LIKE
+
+funcoes:
+	- count
+	- max
+	- min
+	- sum
+	- avg
