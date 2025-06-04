@@ -47,3 +47,39 @@ BETWEEN '2025-05-30 00:00:00' AND '2025-05-31 23:59:59';
 SELECT MIN(c.saldo) FROM contas c;
 
 SELECT MAX(c.saldo) FROM contas c; 
+
+
+
+-- precisamos exibir: 
+-- nome cliente, pessoas
+-- numero conta, contas
+-- operacao, eventos_conta
+-- valor, eventos_conta
+-- somente depositos
+
+SELECT * FROM contas;
+SELECT * FROM pessoas;
+
+SELECT	p.nome,
+		c.numero,
+		ec.operacao,
+		ec.valor
+FROM pessoas p INNER JOIN contas c ON (p.id = c.id_pessoa) INNER JOIN eventos_conta ec ON (c.id = ec.id_conta)
+WHERE ec.operacao = 'DEPOSITO';
+
+
+INSERT INTO sistema_banco.pessoas
+(nome, dt_nascimento, documento , email)
+VALUES('Edney', '1982-05-10', '30040433399', 'edy@mail.com');
+
+
+SELECT * FROM pessoas p WHERE p.id = 23;
+SELECT * FROM contas c where c.id_pessoa = 23;
+
+SELECT	p.nome		AS 'nm_cliente', 
+		c.numero	AS 'nr_conta'
+FROM pessoas p INNER JOIN contas c ON (p.id = c.id_pessoa)
+
+SELECT	p.nome		AS 'nm_cliente', 
+		c.numero	AS 'nr_conta'
+FROM pessoas p LEFT JOIN contas c ON (p.id = c.id_pessoa)

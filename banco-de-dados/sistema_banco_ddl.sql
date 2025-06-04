@@ -15,7 +15,8 @@ CREATE TABLE pessoas (
 	endereco		VARCHAR(255)	NOT NULL				,
 	dt_criacao 		TIMESTAMP 		NOT NULL DEFAULT NOW()	,
 	email			VARCHAR(255) 	NOT NULL UNIQUE			,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id)										,
+	INDEX documento_idx (documento ASC)
 );
 
 CREATE TABLE contas (

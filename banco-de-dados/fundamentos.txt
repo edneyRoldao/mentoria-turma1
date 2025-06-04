@@ -60,3 +60,17 @@ funcoes:
 	- min
 	- sum
 	- avg
+
+JOINS:
+	- left join
+	- right join
+	- inner join
+	- outer join
+
+
+Indices:
+select * from pessoas p where p.id = 1000;
+0 - 10_000
+
+select * from pessoas p where p.id = 11000;
+10_001 - 20_000
