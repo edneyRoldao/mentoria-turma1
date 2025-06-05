@@ -5,7 +5,7 @@ USE mentoria1_db;
 DROP TABLE IF EXISTS contatos;
 
 CREATE TABLE contatos (
-	id 				BIGINT 			NOT NULL                        ,
+	id 				BIGINT 			NOT NULL AUTO_INCREMENT         ,
 	nome 			VARCHAR(100)	NOT NULL				        ,
 	tipo            VARCHAR(50)     NOT NULL DEFAULT('TELEFONE')    ,
 	valor			VARCHAR(255)	NOT NULL				        ,
