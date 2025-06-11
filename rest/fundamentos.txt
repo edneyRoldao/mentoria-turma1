@@ -1,0 +1,100 @@
+---------------
+ >>>> CRUD <<<<<
+ ---------------
+ C - create
+ R - read
+ U - update
+ D - delete (logica/fisica)
+ 
+
+
+ - INTEGRACAO ENTRE SISTEMAS
+---------------------------
+
+- como o c# da empresa conversa com o java da empresa b
+	- REST - convenção
+
+- o que vamos expor do nosso sistema - CRUD
+
+- Request --->		<--- Response
+
+
+REST APIs
+---------
+
+tipos de dados que se trafegam em REST
+- no fim tudo é string (texto)
+- protocolo: HTTP (hyper text transfer protocol)
+- formatos:
+	- json
+		objeto:
+		{
+			"name": "mikasa"	
+		}
+		array:
+		[
+			{
+				"idade": 43
+			}
+		]
+
+
+METHODS (VERBOS HTTP)
+	- GET -> para obter dados (CRUD - Read)
+	- POST -> para inserir dados (CRUD - Create)
+	- PUT -> para alterar dados (CRUD - update)
+	- DELETE -> nao precisa nem falar
+	- PATCH -> update / delete
+
+URL
+	- protocolo, host(host:porta), path
+	exemplo do viacep: https://viacep/ws/json/02343030
+	- cada servico tem seu proprio path.
+	- podemos ter mesmo path porém, verbos diferentes
+
+	URI = path
+	HOST  
+	URL = HOST+URI
+
+
+	temos tambem, path dinamico (variáveis)
+	- https://viacep.com.br/ws/02343030/json
+	- https://viacep.com.br/ws/02010200/json
+
+HEADERS (dados ou metadados da requisicao)
+	- token de authorizacao
+	- tipo de dado que vc receber (content-type)
+
+Query parameters (sao parametros como nos metodos)
+protocolo,host,path?chave=valor&chave2=valor2
+https://pokeapi.co/api/v2/ability/?limit=3&offset=1
+
+
+Corpo da Resposta
+	- RequestBody
+	- ResponseBody
+
+
+Quando chamamos uma API Rest, recebemos codigo de resposta.
+
+StatusResponse
+--------------
+2xx -> sao codigos de sucesso
+	- 200 OK         (o get da info deu certo)
+	- 201 CREATED    (quando inserimos um dado com sucesso)
+	- 204 NO CONTENT (deu certo e nao tem nada pra retornar)
+
+
+4xx -> tem um erro no seu request
+	- 400 BAD REQUEST  (a montagem do seu request está errada)
+	- 404 NOT FOUND    (o recurso não existe. Poder ser URL)
+	- 401 UNAUTHORIZED (vc não tem acesso a este recurso)
+	- 403 FORBIDEN	   (vc está logado, mas esse servico vc nao tem acesso)
+
+
+5xx -> Seu request está correto, mas ocorreu um erro interno aqui
+	- 500 - Internal Server Error
+
+
+Path parameter (faz parte da URL) -> informacoes obrigatorias
+query parameter (nao faz parte URL) -> pode ser opcional
